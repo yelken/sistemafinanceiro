@@ -1,4 +1,4 @@
-package br.org.qualiti.bank.cliente.excecoes;
+package br.org.qualiti.bank.conta.excecoes;
 
 public class ContaInexistenteException extends Exception {
 

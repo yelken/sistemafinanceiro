@@ -1,8 +1,8 @@
 package br.org.qualiti.bank.conta.persistencia;
 
 import br.org.qualiti.bank.cliente.excecoes.ClienteInexistenteException;
-import br.org.qualiti.bank.cliente.excecoes.ContaInexistenteException;
 import br.org.qualiti.bank.conta.excecoes.ContaExistenteException;
+import br.org.qualiti.bank.conta.excecoes.ContaInexistenteException;
 import br.org.qualiti.bank.conta.model.ContaAbstrata;
 
 public interface RepositorioConta {

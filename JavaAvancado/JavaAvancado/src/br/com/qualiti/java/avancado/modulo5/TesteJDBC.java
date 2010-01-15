@@ -11,15 +11,15 @@ public class TesteJDBC {
 	      Class.forName("org.hsqldb.jdbcDriver");
 	      // Obtendo uma conexão com o banco de dados
 	      Connection con = 		DriverManager.getConnection(
-				"jdbc:hsqldb:hsql://localhost:9090/qib ","sa", "");
+				"jdbc:hsqldb:hsql://localhost:9090/qib","sa", "");
 	      /* Neste ponto as consultas já poderiam ser executadas,  
 			 uma vez que a conexão foi estabelecida com sucesso */
 	      // Fechando a conexão obtida
 	      con.close();
 	    } catch (ClassNotFoundException e) {
-			// Não foi possível carregar classe do Driver
+			System.out.println("Erro1");
 	    } catch (SQLException e) {
-	       // SQL Exception
+	       System.out.println("Erro2 "+e.getMessage());
 	    }
 	  }
 }

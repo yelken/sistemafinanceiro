@@ -14,7 +14,6 @@ public class CadastroConta {
 		this.repositorio = repositorio;
 	}
 	
-	
 	public void inserir(ContaAbstrata conta) 
 	throws ClienteInexistenteException, 
 	       ContaExistenteException{

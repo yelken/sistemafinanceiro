@@ -4,6 +4,11 @@ import br.org.qualiti.bank.cliente.excecoes.ClienteExistenteException;
 import br.org.qualiti.bank.cliente.excecoes.ClienteInexistenteException;
 import br.org.qualiti.bank.cliente.model.Cliente;
 
+/**
+ * Interface do repositorio de cliente 
+ * @author Yelken
+ *
+ */
 public interface RepositorioCliente {
 
 	public void inserir(Cliente cliente) throws ClienteExistenteException;

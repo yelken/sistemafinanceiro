@@ -33,7 +33,8 @@ public class RepositorioContasArray implements RepositorioConta {
 			throw new ContaInexistenteException();
 		}
 		
-		// verificar e atualizar cliente
+		// qual classe devo chamar para a atualizar o cliente e verificar se ele existe?
+		// yelken 16/01/2010
 		
 		this.contas[i] = conta;
 	}
@@ -69,6 +70,9 @@ public class RepositorioContasArray implements RepositorioConta {
 		if(index == MAX_TAM) {
 			throw new CapacidadeMaximaExcedidaException();
 		}
+		
+		// tratar cliente
+		// yelken 16/01/2010
 		
 		this.contas[index++] = conta;
 	}

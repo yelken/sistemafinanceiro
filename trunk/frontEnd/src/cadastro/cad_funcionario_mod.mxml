@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Module xmlns:mx="http://www.adobe.com/2006/mxml" layout="absolute" width="524" height="370" xmlns:controls="com.flexpernambuco.controls.*">
+	<mx:Button 	x="83" y="10" label="Editar"/>
+	<mx:Button  x="316" y="10" label="Cancelar"/>
+	<mx:Button 	x="10" y="10" label="Novo"/>
+	<mx:Button 	x="156" y="10" label="Salvar"/>
+	<mx:HRule 	x="10" y="40" width="504"/>
+	<mx:Label x="3" y="50" text="Código:" id="cod"/>
+	<mx:Label x="10" y="76" text="Nome:" id="nome"/>
+	<controls:MasterTextInput x="58" y="48"/>
+	<mx:TextInput x="58" y="74" width="456"/>
+	<mx:Button x="226" y="10" label="Pesquisar"/>
+	<mx:HRule 	x="10" y="154" width="504"/>
+	<mx:DataGrid x="10" y="164" width="504" height="200">
+		<mx:columns>
+			<mx:DataGridColumn dataField="Código"/>
+			<mx:DataGridColumn headerText="Nome" dataField="col2"/>
+			<mx:DataGridColumn headerText="Função"/>
+			<mx:DataGridColumn headerText="Salário"/>
+		</mx:columns>
+	</mx:DataGrid>
+	<mx:Label x="3" y="102" text="Função:" id="nome0"/>
+	<mx:TextInput x="58" y="100" width="456" id="funcao"/>
+	<mx:Label x="3" y="128" text="Salário:" id="nome1"/>
+	<controls:MasterTextInput x="58" y="126" id="salario"/>
+</mx:Module>

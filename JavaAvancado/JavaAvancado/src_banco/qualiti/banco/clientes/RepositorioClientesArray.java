@@ -1,5 +1,9 @@
 package qualiti.banco.clientes;
 
+import java.util.Vector;
+
+import qualiti.banco.geral.ErroAcessoRepositorioException;
+
 /**
  * Implementação da interface que define os métodos de acesso aos dados de cliente
  * em um mecanismo de armazenamento de dados. Esta implementação é realizada através
@@ -47,7 +51,7 @@ public class RepositorioClientesArray implements RepositorioClientes {
 	 * @exception ClienteInexistenteException lançada quando o cliente a ter seus dados
 	 *            atualizados não existe no array. A procura é feita pelo CPF.
 	 */
-	public void atualizar(Cliente c) throws ClienteInexistenteException {
+	public void atualizar(Cliente c) throws ClienteInexistenteException, ErroAcessoRepositorioException {
 
 		int i = procurarIndice(c.getCpf());
 		if (i != -1) {
@@ -162,5 +166,10 @@ public class RepositorioClientesArray implements RepositorioClientes {
 		} else {
 			throw new ClienteInexistenteException(cpf);
 		}
+	}
+
+	public Vector<Cliente> listar() throws ErroAcessoRepositorioException {
+		
+		return null;
 	}
 }

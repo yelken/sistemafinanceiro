@@ -2,6 +2,7 @@ package qualiti.banco.fachada;
 
 import qualiti.banco.clientes.*;
 import qualiti.banco.contas.*;
+import qualiti.banco.geral.ErroAcessoRepositorioException;
 
 /**
  * Classe que representa a fachada do sistema. Interage com o meio externo para atender ou encaminhar
@@ -90,8 +91,9 @@ public class Fachada {
 	 *            atualizados não existe no cadastro. Esta exceção vem da chamada ao
 	 *            cadastro de clientes e é repassada diretamente por este método ao
 	 *            seu método chamador. 
+	 * @throws ErroAcessoRepositorioException 
 	 */
-	public void atualizar(Cliente c) throws ClienteInexistenteException {
+	public void atualizar(Cliente c) throws ClienteInexistenteException, ErroAcessoRepositorioException {
 
 		clientes.atualizar(c);
 	}
@@ -107,9 +109,10 @@ public class Fachada {
 	 * @exception ClienteInexistenteException lançada quando o cliente a ser buscado não 
 	 *            existe no cadastro. Esta exceção vem da chamada ao cadastro de clientes 
 	 *            e é repassada diretamente por este método ao seu método chamador. 
+	 * @throws ErroAcessoRepositorioException 
 	 */
 	public Cliente procurarCliente(String cpf)
-		throws ClienteInexistenteException {
+		throws ClienteInexistenteException, ErroAcessoRepositorioException {
 
 		return clientes.procurar(cpf);
 	}
@@ -124,8 +127,9 @@ public class Fachada {
 	 *            cadastrados já existe no cadastro. Esta exceção vem da chamada ao
 	 *            cadastro de clientes e é repassada diretamente por este método ao
 	 *            seu método chamador. 
+	 * @throws ErroAcessoRepositorioException 
 	 */
-	public void cadastrar(Cliente c) throws ClienteExistenteException {
+	public void cadastrar(Cliente c) throws ClienteExistenteException, ErroAcessoRepositorioException {
 
 		clientes.cadastrar(c);
 	}
@@ -139,9 +143,10 @@ public class Fachada {
 	 * @exception ClienteInexistenteException lançada quando o cliente a ser excluído não 
 	 *            existe no cadastro. Esta exceção vem da chamada ao cadastro de clientes 
 	 *            e é repassada diretamente por este método ao seu método chamador. 
+	 * @throws ErroAcessoRepositorioException 
 	 */
 	public void descadastrarCliente(String cpf)
-		throws ClienteInexistenteException {
+		throws ClienteInexistenteException, ErroAcessoRepositorioException {
 
 		clientes.descadastrar(cpf);
 	}
@@ -199,6 +204,7 @@ public class Fachada {
 	 *            método ao seu método chamador. 
 	 * @exception ClienteInvalidoException se o objeto cliente associado ao objeto conta for nulo. 
 	 *            Esta exceção é instanciada e lançada por este método.
+	 * @throws ErroAcessoRepositorioException 
 	 *
 	 * @see Q1 Este método realiza uma validação que é pré-condição para o cadastramento de uma
 	 *         conta no cadastro de contas. Conceitualmente, este tipo de processamento é de 
@@ -210,7 +216,7 @@ public class Fachada {
 		throws
 			ContaExistenteException,
 			ClienteInexistenteException,
-			ClienteInvalidoException {
+			ClienteInvalidoException, ErroAcessoRepositorioException {
 
 		Cliente cli = c.getCliente();
 		if (cli != null) {

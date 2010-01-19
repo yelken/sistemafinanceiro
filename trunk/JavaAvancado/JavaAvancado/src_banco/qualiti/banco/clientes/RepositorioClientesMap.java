@@ -1,6 +1,9 @@
 package qualiti.banco.clientes;
 
 import java.util.HashMap;
+import java.util.Vector;
+
+import qualiti.banco.geral.ErroAcessoRepositorioException;
 
 /**
  * Implementação da interface que define os métodos de acesso aos dados de cliente
@@ -108,5 +111,10 @@ public class RepositorioClientesMap implements RepositorioClientes {
 		} else {
 			throw new ClienteInexistenteException(cpf);
 		}
+	}
+
+	public Vector<Cliente> listar() throws ErroAcessoRepositorioException {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

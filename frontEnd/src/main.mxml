@@ -46,20 +46,20 @@
 		<mx:XMLList>
 			<menuitem label="Cadastro">
 				<menuitem 
-						  label="Funcionários"
+						  label="Usuarios"
 						  id="func"
 						  caminho="cadastro/cad_funcionario_mod.swf"
-						  tituloJanela="Cadastro de funcionários"
+						  tituloJanela="Cadastro de usuários"
 						  molduraHeight = "370"
 						  molduraWidth = "525"						  
 						  telaWidth = "545"
 						  telaHeight = "420"
 						  />
 				<menuitem 
-						  label="Fornecedores"
+						  label="Contatos"
 						  id="comp"
 						  caminho="cadastro/cad_fornecedores_mod.swf"
-						  tituloJanela="Cadastro de fornecedores"
+						  tituloJanela="Cadastro de contatos"
 						  molduraHeight = "330"
 						  molduraWidth = "525"						  
 						  telaWidth = "545"
@@ -68,20 +68,20 @@
 			</menuitem>
 			<menuitem label="Relatório">
 				<menuitem
-					      label="Relatório de Funcionários"
+					      label="Relatório de Usuários"
 						  id="relFunc"
 						  caminho=""
-						  tituloJanela="Relatório de funcionários"
+						  tituloJanela="Relatório de Usuários"
 						  molduraHeight = "330"
 						  molduraWidth = "525"						  
 						  telaWidth = "545"
 						  telaHeight = "380"
 						  />
 				<menuitem
-						  label="Relatório de Fornecedores"
+						  label="Relatório de Contatos"
 						  id="relForn"
 						  caminho=""
-						  tituloJanela="Relatório de fornecedores"
+						  tituloJanela="Relatório de contatos"
 						  molduraHeight = "330"
 						  molduraWidth = "525"						  
 						  telaWidth = "545"
@@ -96,5 +96,5 @@
 	</mx:MenuBar>
 	<mx:Canvas id="framePrincipal" x="10" y="66" width="1020" height="689">
 	</mx:Canvas>
-	<mx:Label x="10" y="6" text="Financial system" fontSize="19"/>
+	<mx:Label x="10" y="6" text="Sistema financeiro" fontSize="19"/>
 </mx:Application>

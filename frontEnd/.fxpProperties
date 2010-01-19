@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<fxpProperties abbreviated="false" authoringTool="Flex Builder" compiles="true" parentProject="07926569-ca62-48c5-a727-b3b254791b14" projectUUID="07926569-ca62-48c5-a727-b3b254791b14" sdkVersion="3.4.1" uuid="ca3a0c3f-c458-46c5-927a-5cf2342d38bd" version="3">
+  <projects/>
+  <src/>
+  <swc>
+    <linked location="sdkPlaceHolder" path="sdkPlaceHolder" position="0" uuid="ca3a0c3f-c458-46c5-927a-5cf2342d38bd"/>
+    <linked location="E:/FC/fc-teste/libs" path="/libs" position="1" uuid="ca3a0c3f-c458-46c5-927a-5cf2342d38bd"/>
+    <linked location="C:/Documents and Settings/Yelken Heckman/Meus documentos/Meus arquivos recebidos/MasterTextInput.swc" path="/linked-swc/MasterTextInput.swc" position="2" uuid="ca3a0c3f-c458-46c5-927a-5cf2342d38bd"/>
+    <linked location="C:/Documents and Settings/Yelken Heckman/Meus documentos/Meus arquivos recebidos/NumberTextInput.swc" path="/linked-swc/NumberTextInput.swc" position="3" uuid="ca3a0c3f-c458-46c5-927a-5cf2342d38bd"/>
+  </swc>
+  <misc/>
+  <theme/>
+</fxpProperties>

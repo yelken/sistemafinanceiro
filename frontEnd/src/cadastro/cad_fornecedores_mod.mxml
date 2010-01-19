@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Module xmlns:mx="http://www.adobe.com/2006/mxml" layout="absolute" width="524" height="330" xmlns:controls="com.flexpernambuco.controls.*" xmlns:portillodesign="portillodesign.*">
+	<mx:Button 	x="83" y="10" label="Editar"/>
+	<mx:Button  x="316" y="10" label="Cancelar"/>
+	<mx:Button 	x="10" y="10" label="Novo"/>
+	<mx:Button 	x="156" y="10" label="Salvar"/>
+	<mx:HRule 	x="10" y="40" width="504"/>
+	<mx:Label x="5" y="53" text="Código:" id="cod"/>
+	<mx:Label x="11" y="76" text="Nome:" id="nome"/>
+	<mx:Button x="226" y="10" label="Pesquisar"/>
+	<mx:HRule 	x="10" y="104" width="504"/>
+	<mx:DataGrid x="10" y="114" width="504" height="200">
+		<mx:columns>
+			<mx:DataGridColumn dataField="Código"/>
+			<mx:DataGridColumn headerText="Nome" dataField="col2"/>
+		</mx:columns>
+	</mx:DataGrid>
+	<portillodesign:NumberTextInput x="58" y="51"/>
+	<mx:TextInput x="58" y="74" width="456"/>
+</mx:Module>

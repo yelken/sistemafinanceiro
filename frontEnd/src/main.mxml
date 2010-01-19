@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application  xmlns:mx="http://www.adobe.com/2006/mxml" layout="absolute" minWidth="1024" minHeight="768" themeColor="#8195A1" initialize="carregarFuncoesMenu()">
+	<mx:Style source="/../assets/css/Styles.css"/>	
+	<mx:Script>
+		<![CDATA[		
+			import mx.events.CloseEvent;
+			import mx.events.MenuEvent;
+			import mx.modules.ModuleLoader;
+			
+			import superPanel.containers.SuperPanel;
+			
+			// objetos de tela onde sera carregado o swf
+			private var cadComp:SuperPanel;
+			private var novaTela : ModuleLoader;
+			
+			private function carregarFuncoesMenu() : void {
+				menuPrincipal.addEventListener(MenuEvent.ITEM_CLICK,showCadCompradores);	
+			}
+						
+			
+			private function showCadCompradores(event : MenuEvent) : void { 	
+				novaTela = new ModuleLoader;
+				cadComp = new SuperPanel;
+				novaTela.url = event.item.@caminho;
+				
+				novaTela.height = event.item.@molduraHeight;
+				novaTela.width = event.item.@molduraWidth;
+					
+				cadComp.width = event.item.@telaWidth;
+				cadComp.height = event.item.@telaHeight;
+				cadComp.allowClose = true;	  // fechar janela	 
+				cadComp.allowDrag = true;     // arrastar tela				
+				cadComp.allowMinimize = true;  // minimizar tela
+				cadComp.title = event.item.@tituloJanela; 				
+				cadComp.addEventListener(CloseEvent.CLOSE, function(event:CloseEvent):void{
+					event.target.parent.removeChild(event.target);
+				});
+				
+				framePrincipal.addChild(cadComp);
+				cadComp.addChild(novaTela);
+			}
+			]]>							
+	</mx:Script>
+	
+	<mx:MenuBar id="menuPrincipal" x="10" y="36" labelField="@label" borderColor="#7FAFD1" width="1021">
+		<mx:XMLList>
+			<menuitem label="Cadastro">
+				<menuitem 
+						  label="Funcionários"
+						  id="func"
+						  caminho="cadastro/cad_funcionario_mod.swf"
+						  tituloJanela="Cadastro de funcionários"
+						  molduraHeight = "370"
+						  molduraWidth = "525"						  
+						  telaWidth = "545"
+						  telaHeight = "420"
+						  />
+				<menuitem 
+						  label="Fornecedores"
+						  id="comp"
+						  caminho="cadastro/cad_fornecedores_mod.swf"
+						  tituloJanela="Cadastro de fornecedores"
+						  molduraHeight = "330"
+						  molduraWidth = "525"						  
+						  telaWidth = "545"
+						  telaHeight = "380"						
+						  />
+			</menuitem>
+			<menuitem label="Relatório">
+				<menuitem
+					      label="Relatório de Funcionários"
+						  id="relFunc"
+						  caminho=""
+						  tituloJanela="Relatório de funcionários"
+						  molduraHeight = "330"
+						  molduraWidth = "525"						  
+						  telaWidth = "545"
+						  telaHeight = "380"
+						  />
+				<menuitem
+						  label="Relatório de Fornecedores"
+						  id="relForn"
+						  caminho=""
+						  tituloJanela="Relatório de fornecedores"
+						  molduraHeight = "330"
+						  molduraWidth = "525"						  
+						  telaWidth = "545"
+						  telaHeight = "380"
+						  />
+			</menuitem>
+			<menuitem label="Lançamento de contas">
+				
+			</menuitem>	
+			<menuitem label="Opções"/>
+		</mx:XMLList>
+	</mx:MenuBar>
+	<mx:Canvas id="framePrincipal" x="10" y="66" width="1020" height="689">
+	</mx:Canvas>
+	<mx:Label x="10" y="6" text="Financial system" fontSize="19"/>
+</mx:Application>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<actionScriptProperties mainApplicationPath="main.mxml" projectUUID="07926569-ca62-48c5-a727-b3b254791b14" version="6">
+  <compiler additionalCompilerArguments="-locale en_US" autoRSLOrdering="false" copyDependentFiles="true" flexSDK="Flex 3.4" generateAccessible="false" htmlExpressInstall="true" htmlGenerate="true" htmlHistoryManagement="true" htmlPlayerVersionCheck="true" includeNetmonSwc="false" outputFolderPath="bin-debug" sourceFolderPath="src" strict="true" targetPlayerVersion="0.0.0" useApolloConfig="false" useDebugRSLSwfs="true" verifyDigests="true" warn="true">
+    <compilerSourcePath/>
+    <libraryPath defaultLinkType="0">
+      <libraryPathEntry kind="4" path="">
+        <excludedEntries>
+          <libraryPathEntry kind="3" linkType="1" path="${PROJECT_FRAMEWORKS}/libs/flex.swc" useDefaultLinkType="false"/>
+        </excludedEntries>
+      </libraryPathEntry>
+      <libraryPathEntry kind="1" linkType="1" path="libs"/>
+      <libraryPathEntry kind="3" linkType="1" path="MasterTextInput.swc" useDefaultLinkType="false"/>
+      <libraryPathEntry kind="3" linkType="1" path="NumberTextInput.swc" useDefaultLinkType="false"/>
+    </libraryPath>
+    <sourceAttachmentPath/>
+  </compiler>
+  <applications>
+    <application path="main.mxml"/>
+  </applications>
+  <modules>
+    <module application="src/main.mxml" destPath="cadastro/cad_fornecedores_mod.swf" optimize="true" sourcePath="src/cadastro/cad_fornecedores_mod.mxml"/>
+    <module application="src/main.mxml" destPath="cadastro/cad_funcionario_mod.swf" optimize="true" sourcePath="src/cadastro/cad_funcionario_mod.mxml"/>
+  </modules>
+  <buildCSSFiles/>
+</actionScriptProperties>

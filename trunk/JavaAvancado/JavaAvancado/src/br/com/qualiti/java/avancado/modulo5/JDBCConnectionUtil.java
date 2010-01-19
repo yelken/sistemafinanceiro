@@ -58,7 +58,7 @@ public class JDBCConnectionUtil {
 	
 	
 	public static void createTransaction() throws SQLException{
-		
+			getConnection();
 	}
 	public static Savepoint createSavePoint(String name) throws SQLException{
 		return null;

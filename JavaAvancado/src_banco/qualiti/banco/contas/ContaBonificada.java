@@ -50,6 +50,7 @@ public class ContaBonificada extends Conta {
 	 * 
 	 * @param valor o valor a ser creditado.
 	 */
+	@Override
 	public void creditar(double valor) {
 
 		bonus = bonus + valor * 0.01;

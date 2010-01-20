@@ -9,6 +9,7 @@ package qualiti.banco.contas;
  *
  * @see qualiti.banco.conta.RepositorioContas
  */
+@SuppressWarnings("serial")
 public class ContaInexistenteException extends Exception {
 
 	/**

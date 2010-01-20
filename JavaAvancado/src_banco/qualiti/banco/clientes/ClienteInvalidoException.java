@@ -9,5 +9,6 @@ package qualiti.banco.clientes;
  *
  * @see qualiti.banco.fachada.Fachada
  */
+@SuppressWarnings("serial")
 public class ClienteInvalidoException extends Exception {
 }

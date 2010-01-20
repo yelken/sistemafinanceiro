@@ -1,5 +1,8 @@
 package qualiti.banco.clientes;
 
+import java.util.Vector;
+
+import qualiti.banco.geral.ErroAcessoRepositorioException;
 /**
  * Classe que realiza validações referentes às operações de atualização de dados
  * no mecanismo de armazenamento de dados de clientes e usa o repositório de clientes
@@ -40,7 +43,8 @@ public class CadastroClientes {
 	 *            chamada ao repositório de clientes e é repassada diretamente por este
 	 *            método ao seu método chamador.
 	 */
-	public void atualizar(Cliente c) throws ClienteInexistenteException {
+	public void atualizar(Cliente c)
+		throws ClienteInexistenteException, ErroAcessoRepositorioException {
 
 		clientes.atualizar(c);
 	}
@@ -56,7 +60,8 @@ public class CadastroClientes {
 	 *            lançada por este método, caso a consulta ao CPF feita no repositório
 	 *            retorne true.
 	 */
-	public void cadastrar(Cliente c) throws ClienteExistenteException {
+	public void cadastrar(Cliente c)
+		throws ClienteExistenteException, ErroAcessoRepositorioException {
 
 		String cpf = c.getCpf();
 		if (!clientes.existe(cpf)) {
@@ -76,7 +81,8 @@ public class CadastroClientes {
 	 *            repositório de clientes e é repassada diretamente por este método
 	 *            ao seu método chamador.
 	 */
-	public void descadastrar(String cpf) throws ClienteInexistenteException {
+	public void descadastrar(String cpf)
+		throws ClienteInexistenteException, ErroAcessoRepositorioException {
 
 		clientes.remover(cpf);
 	}
@@ -94,8 +100,13 @@ public class CadastroClientes {
 	 *            ao repositório de clientes e é repassada diretamente por este método ao
 	 *            seu método chamador.
 	 */
-	public Cliente procurar(String cpf) throws ClienteInexistenteException {
+	public Cliente procurar(String cpf)
+		throws ClienteInexistenteException, ErroAcessoRepositorioException {
 
 		return clientes.procurar(cpf);
+	}
+
+	public Vector<Cliente> listar()throws ErroAcessoRepositorioException {
+		return clientes.listar();
 	}
 }

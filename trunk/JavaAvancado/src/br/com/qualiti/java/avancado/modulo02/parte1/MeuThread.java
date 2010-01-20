@@ -8,6 +8,7 @@ public class MeuThread extends Thread {
 		this.nome = n;
 	}
 
+	@Override
 	public void run() {
 		for (int i = 0; i < 50; i++) {
 			System.out.println(this.nome + " gerou valor: " + i);

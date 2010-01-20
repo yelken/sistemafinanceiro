@@ -13,6 +13,7 @@ package qualiti.banco.contas;
  * @see qualiti.banco.conta.Conta
  * @see qualiti.banco.conta.ContaImposto
  */
+@SuppressWarnings("serial")
 public class SaldoInsuficienteException extends Exception {
 
 	/**

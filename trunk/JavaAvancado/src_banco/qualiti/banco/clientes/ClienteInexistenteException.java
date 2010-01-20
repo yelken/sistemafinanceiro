@@ -9,6 +9,7 @@ package qualiti.banco.clientes;
  *
  * @see qualiti.banco.cliente.RepositorioClientes
  */
+@SuppressWarnings("serial")
 public class ClienteInexistenteException extends Exception {
 
 	/**

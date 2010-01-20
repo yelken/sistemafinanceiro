@@ -1,76 +1,62 @@
 package br.com.qualiti.java.avancado.modulo03.parte1;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
+
 
 public class TestCollection {
+
 	
-	public Map<String, String> criarMapClientes(String[] cpfs) {
-		Map<String, String> mapaClientes = new HashMap<String, String>();
-		int i = 10;
-		for (String cpf : cpfs) {
-			mapaClientes.put(cpf, "Meu Cliente " + i);
-			i--;
-		}
-		return mapaClientes;
-	}
+	public void testeListSet(){
+		Set<String> conjunto = new HashSet<String>();
+	    List<String> lista = new ArrayList<String>();
+	    conjunto.add("A");
+	    conjunto.add("B");
+	    conjunto.add("C");
+	    conjunto.add("C");
+	    conjunto.add("D");
+	    conjunto.add("E");
+	    conjunto.add("E");
 
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		System.out.println("Criando List e Set...");
-		List<String> minhaLista = new ArrayList<String>();
-		Set<String> meuConjunto = new HashSet<String>();
-		
-		minhaLista.add("A");
-		minhaLista.add("B");
-		minhaLista.add("C");
-		minhaLista.add("D");
-		minhaLista.add("E");
-		minhaLista.add("F");
-		minhaLista.add("G");
-		minhaLista.add("C");
-		minhaLista.add("D");
-		
-		meuConjunto.add("A");
-		meuConjunto.add("B");
-		meuConjunto.add("C");
-		meuConjunto.add("D");
-		meuConjunto.add("E");
-		meuConjunto.add("F");
-		meuConjunto.add("G");
-		meuConjunto.add("C");
-		meuConjunto.add("D");
-		
-		System.out.println("Tamanho da List minhaLista é " + minhaLista.size());
-		System.out.println("Tamanho do Set meuConjunto é " + meuConjunto.size());
+	    lista.add("A");
+	    lista.add("B");
+	    lista.add("C");
+	    lista.add("C");
+	    lista.add("D");
+	    lista.add("E");
+	    lista.add("E");
 
-		String segundoEmentoLista = minhaLista.get(1);
-		String segundoEmentoConjunto = (String) meuConjunto.toArray()[1];
-		
-		System.out.println("Segundo elemento de minhaLista é " + segundoEmentoLista);
-		System.out.println("Segundo elemento de meuConjunto é " + segundoEmentoConjunto);
-		
-		System.out.println("minhaLista tem os seguintes elementos: " + minhaLista);
-		System.out.println("meuConjunto tem os seguintes elementos: " + meuConjunto);
-		
-		System.out.println("Criando Map de clientes");
-		
-		TestCollection testCollection = new TestCollection();
-		
-		String[] cpfs = { "004", "003", "002", "001", "005" };
-		
-		Map<String, String> mapaClientes = testCollection.criarMapClientes(cpfs);
-		
-		System.out.println("Cliente com cpf 001 é " + mapaClientes.get("001"));
-		System.out.println("Cliente com cpf 002 é " + mapaClientes.get("002"));
-		System.out.println("Cliente com cpf 003 é " + mapaClientes.get("003"));
-		
+	    System.out.println("tamanho do Set: "+conjunto.size());
+	    System.out.println("tamanho do List: "+lista.size());
+
+	    System.out.println("segundo da list: "+lista.get(1));
+	    System.out.println("segundo do set: "+conjunto.toArray()[1]);
+
+	    System.out.println("set: "+conjunto.toString());
+	    System.out.println("list: "+lista.toString());
 	}
+	
+  
+  public Map<String,String> criarMapClientes (String[] cpfs) {
+      Map<String,String> mapa = new HashMap<String,String>();
+      mapa.put(cpfs[0], "joao");
+      mapa.put(cpfs[1], "claudia");
+      mapa.put(cpfs[2], "silvia");
+      return mapa;
+  }
+  
+  public static void main(String[] args) {
+
+    TestCollection testCollection = new TestCollection();
+
+    testCollection.testeListSet();
+    
+    
+    String[] cpfs = { "1", "2", "3", "4", "5" };
+    Map<String,String> clientes = testCollection.criarMapClientes(cpfs);
+    System.out.println("numero: 1 "+clientes.get("1"));
+    System.out.println("numero: 2 "+clientes.get("2"));
+    System.out.println("numero: 3 "+clientes.get("3"));
+
+  }
 
 }

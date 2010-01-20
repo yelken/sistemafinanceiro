@@ -46,6 +46,7 @@ public class Conta extends ContaAbstrata {
 	 * @exception SaldoInsuficienteException lançada quando o valor passado como
 	 *            parâmetro é maior que o saldo da conta. 
 	 */
+	@Override
 	public void debitar(double valor) throws SaldoInsuficienteException {
 
 		double saldo = getSaldo();

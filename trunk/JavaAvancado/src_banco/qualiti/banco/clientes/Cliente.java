@@ -18,6 +18,10 @@ public class Cliente {
 	 * O nome do cliente.
 	 */
 	private String nome;
+	/**
+	 *Endereco do cliente.
+	 */	
+	private Endereco endereco;
 
 	/**
 	 * O construtor da classe. Inicializa os atributos CPF e nome.
@@ -32,8 +36,24 @@ public class Cliente {
 
 		this.cpf = newCpf;
 		this.nome = newNome;
+		this.endereco = null;
 	}
 
+	/**
+	 * O construtor da classe. Inicializa os atributos CPF, nome e endereco.
+	 *
+	 * @param newCpf o valor do CPF.
+	 * @param newNome o valor do nome.
+	 * @param newEndereco o valor do endereco.
+	 * @see Q1 Está certo o construtor atribuir diretamente os valores
+	 *         de newCpf e de newNome aos atributos cpf e nome ??
+	 */
+	public Cliente(String newCpf, String newNome, Endereco endereco) {
+
+		this.cpf = newCpf;
+		this.nome = newNome;
+		this.endereco = endereco;
+	}
 	/**
 	 * Retorna o CPF do cliente.
 	 *
@@ -51,6 +71,14 @@ public class Cliente {
 	public String getNome() {
 
 		return nome;
+	}
+	/**
+	 * Retorna o endereco do cliente.
+	 *
+	 * @return String o endereco do cliente.
+	 */
+	public Endereco getEndereco() {
+		return endereco;
 	}
 	/**
 	 * Atualiza o valor do CPF do cliente.
@@ -73,5 +101,13 @@ public class Cliente {
 	public void setNome(String newNome) {
 
 		nome = newNome;
+	}
+	/**
+	 * Atualiza o valor do endereco do cliente.
+	 *
+	 * @param endereco o novo valor.
+	 */
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
 	}
 }

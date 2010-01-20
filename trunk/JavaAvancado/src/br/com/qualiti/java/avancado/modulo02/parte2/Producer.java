@@ -8,7 +8,8 @@ public class Producer extends Thread {
         this.number = number;
     }
 
-    public void run() {
+    @Override
+	public void run() {
         for (int i = 0; i < 10; i++) {
             String mensagem = "mensagem "+i+" do produtor "+this.number;
             mailBox.put(mensagem, this.number);

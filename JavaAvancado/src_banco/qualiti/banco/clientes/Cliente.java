@@ -1,5 +1,13 @@
 package qualiti.banco.clientes;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+
+ 
+
 /**
  * Classe básica que representa uma entidade cliente, com seus dados, validações
  * dos mesmos e suas operações relacionadas.
@@ -8,19 +16,25 @@ package qualiti.banco.clientes;
  *
  * @version 1.0
  */
+@Entity(name = "Cliente")
+@Table(name = "TB_CLIENTE")
 public class Cliente {
 
 	/**
 	 * O CPF do cliente.
 	 */
+	@Id
+	@Column(name = "cpf")
 	private String cpf;
 	/**
 	 * O nome do cliente.
 	 */
+	@Column(name = "nome")
 	private String nome;
 	/**
 	 *Endereco do cliente.
 	 */	
+	@Transient
 	private Endereco endereco;
 
 	/**

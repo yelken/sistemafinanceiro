@@ -1,4 +1,5 @@
 package qualiti.banco.fachada;
+import java.util.Collection;
 import java.util.Random;
 import java.util.Vector;
 
@@ -6,7 +7,9 @@ import qualiti.banco.clientes.Cliente;
 import qualiti.banco.clientes.ClienteExistenteException;
 import qualiti.banco.clientes.ClienteInexistenteException;
 import qualiti.banco.clientes.Endereco;
+import qualiti.banco.contas.ContaAbstrata;
 import qualiti.banco.geral.ErroAcessoRepositorioException;
+import qualiti.banco.gerentes.Gerente;
 
 /*
  * Created on 15/10/2003
@@ -40,6 +43,29 @@ public class TesteFachada {
 				System.out.println("          ENDERECO["+c.getEndereco().getCEP()+","+c.getEndereco().getNumero()+","+c.getEndereco().getComplemento()+"]");
 			}else{
 				System.out.println("          ENDERECO[******NÃO CADASTRADO*****] ");
+			}
+			
+			Collection<ContaAbstrata> contas = c.getContas();
+			Collection<Gerente>       gerentes = c.getGerentes();
+			
+			if(contas!=null){
+				System.out.println("          Contas[");
+				for(ContaAbstrata conta : contas){
+					System.out.println("                 NUM:"+conta.getNumero()+" SALDO:"+conta.getSaldo());
+				}
+				System.out.println("                ]");
+			}else{
+				System.out.println("          CLIENTE SEM CONTAS");
+			}
+			
+			if(gerentes!=null){
+				System.out.println("          Gerentes[");
+				for(Gerente gerente : gerentes){
+					System.out.println("                 NOME:"+gerente.getNome()+" EMAIL:"+gerente.getEmail());
+				}
+				System.out.println("                ]");
+			}else{
+				System.out.println("          CLIENTE SEM GERENTES");
 			}
 		}
 		System.out.println("\n\n\n");

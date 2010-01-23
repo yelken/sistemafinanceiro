@@ -1,5 +1,23 @@
 package qualiti.banco.contas;
 
+import javax.persistence.Column;
+import javax.persistence.DiscriminatorColumn;
+import javax.persistence.DiscriminatorType;
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
 import qualiti.banco.clientes.Cliente;
 
 /**
@@ -12,21 +30,39 @@ import qualiti.banco.clientes.Cliente;
  *
  * @version 1.0 
  */
+@Entity
+@Table( name="tb_conta" )
+@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn( name="tipo", discriminatorType=DiscriminatorType.INTEGER)
+@DiscriminatorValue("0")
 public abstract class ContaAbstrata {
 
+	@Id
+	@Column ( name="id" )
+	private int id;
 	/**
 	 * O número da conta.
 	 */
+	@Column ( name="numero" )
 	private String numero;
 	/**
 	 * O saldo da conta.
 	 */
+	@Column ( name="saldo" )
 	private double saldo;
 	/**
 	 * O cliente associado à conta.
 	 */
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name="tb_cliente_cpf")
+	@Fetch(FetchMode.JOIN)
+	@Cascade(CascadeType.SAVE_UPDATE)
 	private Cliente cliente;
 
+	public ContaAbstrata() {
+
+	}
+	
 	/**
 	 * O construtor da classe. Inicializa os atributos com os valores passados como
 	 * parâmetro chamando os métodos sets dos mesmos.
@@ -35,7 +71,6 @@ public abstract class ContaAbstrata {
 	 * @param c o cliente da conta.  
 	 */
 	public ContaAbstrata(String num, Cliente c) {
-
 		// Chama o construtor sobrecarregado desta classe que recebe um número,
 		// um saldo e um cliente. Neste caso, passa zero para o saldo.
 		this(num, 0, c);
@@ -161,5 +196,13 @@ public abstract class ContaAbstrata {
 
 		this.debitar(v);
 		c.creditar(v);
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 }

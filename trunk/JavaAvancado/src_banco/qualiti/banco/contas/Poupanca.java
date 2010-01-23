@@ -1,5 +1,8 @@
 package qualiti.banco.contas;
 
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+
 import qualiti.banco.clientes.Cliente;
 
 /**
@@ -14,8 +17,14 @@ import qualiti.banco.clientes.Cliente;
  *
  * @see qualiti.banco.conta.Conta
  */
+@Entity
+@DiscriminatorValue("2")
 public class Poupanca extends Conta {
 
+	public Poupanca() {
+		
+	}
+	
 	/**
 	 * O construtor da classe. Inicializa os atributos com os valores passados como
 	 * parâmetro chamando o construtor da super-classe.

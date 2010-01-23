@@ -8,7 +8,7 @@ import qualiti.banco.clientes.ClienteExistenteException;
 import qualiti.banco.clientes.ClienteInexistenteException;
 import qualiti.banco.clientes.ClienteInvalidoException;
 import qualiti.banco.clientes.RepositorioClientes;
-import qualiti.banco.clientes.RepositorioClientesBDR;
+import qualiti.banco.clientes.RepositorioClientesHibernate;
 import qualiti.banco.contas.CadastroContas;
 import qualiti.banco.contas.ContaAbstrata;
 import qualiti.banco.contas.ContaExistenteException;
@@ -72,7 +72,7 @@ public class Fachada {
 
 		RepositorioContas rep = new RepositorioContasBDR();
 		contas = new CadastroContas(rep);
-		RepositorioClientes repClientes = new RepositorioClientesBDR();
+		RepositorioClientes repClientes = new RepositorioClientesHibernate();
 		clientes = new CadastroClientes(repClientes);
 	}
 

@@ -19,5 +19,7 @@
 	<classpathentry kind="lib" path="HIBERNATE/lib/hsqldb.jar"/>
 	<classpathentry kind="lib" path="HIBERNATE/lib/jta.jar"/>
 	<classpathentry kind="lib" path="HIBERNATE/lib/log4j-1.2.11.jar"/>
+	<classpathentry kind="lib" path="lib/forms-1.1.0.jar"/>
+	<classpathentry kind="lib" path="lib/miglayout-3.5.5.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

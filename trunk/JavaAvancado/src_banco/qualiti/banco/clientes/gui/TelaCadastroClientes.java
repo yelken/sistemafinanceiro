@@ -8,6 +8,19 @@ import qualiti.banco.clientes.Cliente;
 import javax.swing.JOptionPane;
 
 
+
+/**
+* This code was edited or generated using CloudGarden's Jigloo
+* SWT/Swing GUI Builder, which is free for non-commercial
+* use. If Jigloo is being used commercially (ie, by a corporation,
+* company or business for any purpose whatever) then you
+* should purchase a license for each developer using Jigloo.
+* Please visit www.cloudgarden.com for details.
+* Use of Jigloo implies acceptance of these licensing terms.
+* A COMMERCIAL LICENSE HAS NOT BEEN PURCHASED FOR
+* THIS MACHINE, SO JIGLOO OR THIS CODE CANNOT BE USED
+* LEGALLY FOR ANY CORPORATE OR COMMERCIAL PURPOSE.
+*/
 @SuppressWarnings("serial")
 public class TelaCadastroClientes extends JFrame {
   JPanel pnBotoes = new JPanel();
@@ -41,11 +54,6 @@ public class TelaCadastroClientes extends JFrame {
   private void jbInit() throws Exception {
     btIncluir.setEnabled(false);
     btIncluir.setText("Incluir");
-    btIncluir.addActionListener(new java.awt.event.ActionListener() {
-      public void actionPerformed(ActionEvent e) {
-        btIncluir_actionPerformed(e);
-      }
-    });
     btAlterar.setEnabled(false);
     btAlterar.setText("Alterar");
     btAlterar.addActionListener(new java.awt.event.ActionListener() {
@@ -104,6 +112,11 @@ public class TelaCadastroClientes extends JFrame {
     btAcesso.setBounds(new Rectangle(282, 34, 44, 27));
     this.getContentPane().add(pnBotoes, BorderLayout.SOUTH);
     pnBotoes.add(btIncluir, null);
+    btIncluir.addActionListener(new ActionListener() {
+    	public void actionPerformed(ActionEvent e) {
+    		btIncluir_actionPerformed(e);
+    	}
+    });
     pnBotoes.add(btAlterar, null);
     pnBotoes.add(btExcluir, null);
     pnBotoes.add(btCancelar, null);
@@ -114,6 +127,7 @@ public class TelaCadastroClientes extends JFrame {
     pnPrinc.add(txNome, null);
     pnPrinc.add(btNovo, null);
     pnPrinc.add(btAcesso, null);
+    pack();
   }
 
   void txCpf_actionPerformed(ActionEvent e) {

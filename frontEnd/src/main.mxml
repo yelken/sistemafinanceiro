@@ -14,11 +14,11 @@
 			private var novaTela : ModuleLoader;
 			
 			private function carregarFuncoesMenu() : void {
-				menuPrincipal.addEventListener(MenuEvent.ITEM_CLICK,showCadCompradores);	
+				menuPrincipal.addEventListener(MenuEvent.ITEM_CLICK,showTela);	
 			}
 						
 			
-			private function showCadCompradores(event : MenuEvent) : void { 	
+			private function showTela(event : MenuEvent) : void { 	
 				novaTela = new ModuleLoader;
 				cadComp = new SuperPanel;
 				novaTela.url = event.item.@caminho;
